@@ -52,7 +52,7 @@ export default function BusinessList({searchText}) {
         }
     });
     const removeBusiness = (id) => {
-        fetch(`/api/delete/${id}`,{
+        fetch(`https://businessbackend.herokuapp.com/api/delete/${id}`,{
             method: 'DELETE',
         }).then(res => res.json()) // or res.json()
         .then(result => console.log(result));
@@ -61,7 +61,7 @@ export default function BusinessList({searchText}) {
     }
 
     const fetchBusinessId = (id) => {
-        fetch(`/api/fetch/${id}`,{
+        fetch(`https://businessbackend.herokuapp.com/api/fetch/${id}`,{
             method: 'GET',
         }).then(res => res.json()) // or res.json()
         .then(result => setEditBusinessData({...result.data}));
@@ -83,7 +83,7 @@ export default function BusinessList({searchText}) {
     }
 
     const getBusinessList = () => {
-        fetch(`/api/fetch`).then(res => res.json()).then(function (result){
+        fetch(`https://businessbackend.herokuapp.com/api/fetch`).then(res => res.json()).then(function (result){
             setbusinessData(result.data); 
             setfilteredBusinessData(result.data);
         })

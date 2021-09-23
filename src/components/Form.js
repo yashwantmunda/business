@@ -64,7 +64,7 @@ export default function Form({showForm}) {
         if(name.trim().length !== 0 && email.trim().length !== 0 && validateEmail(email) && phone.trim().length !== 0 &&
          category.trim().length !== 0 && size.trim().length !== 0 && owner.trim().length !== 0 && location.trim().length !== 0 && description.trim().length !== 0 && 
          street.trim().length !== 0 && state.trim().length !== 0 && city.trim().length !== 0 && zipCode.trim().length !== 0 && country.trim().length !== 0){
-            const response = await fetch('/api/create', {
+            const response = await fetch('https://businessbackend.herokuapp.com/api/create', {
                     method: 'POST',
                     headers: {
                     'Accept': 'application/json',
