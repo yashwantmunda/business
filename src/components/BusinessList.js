@@ -83,7 +83,10 @@ export default function BusinessList({searchText}) {
     }
 
     const getBusinessList = () => {
-        fetch(`/api/fetch`).then(res => res.json()).then(result => (setbusinessData(result.data), setfilteredBusinessData(result.data)));
+        fetch(`/api/fetch`).then(res => res.json()).then(function (result){
+            setbusinessData(result.data); 
+            setfilteredBusinessData(result.data);
+        })
     }
     
     useEffect(() => {
@@ -98,7 +101,7 @@ export default function BusinessList({searchText}) {
         else{
             setfilteredBusinessData([...businessData]) 
         }
-    },[searchText])
+    },[searchText,businessData])
 
     return (
         <>

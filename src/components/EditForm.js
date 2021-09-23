@@ -81,7 +81,7 @@ export default function EditForm({open,handleCloseModal,businessInfo,businessId}
                     },
                     body: JSON.stringify(formData)
                 });
-            const content = await response.json();
+            
             setInfoUpdated(true);
             
             
@@ -151,6 +151,7 @@ export default function EditForm({open,handleCloseModal,businessInfo,businessId}
                 <Button onClick={handleClose}>Cancel</Button>
                 <Button onClick={() => formvalidation(businessId)} sx={{m:"1.5rem"}} variant="contained" color="secondary">Update</Button>
             </Box>
+            
             </Box>
         </>
 }
